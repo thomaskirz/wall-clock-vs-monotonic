@@ -7,7 +7,7 @@ As a rule of thumb: use wall clocks to know *when* something happened, and monot
 In my case, the clock instability seemed to be related to the Windows Subsystem for Linux VM I used for my experiments. I saw an execution time of 40.95 s for one query, followed by -40.55 s for the next. The two values sum to 0.40 s, which is around what I expected the two queries to take. From this, I concluded a clock jump of ~41 s during the first query and a jump back during the next one, which is roughly consistent with the system logs.
 The following diagram shows how the two jumps produced these execution times:
 
-![Diagram visualising the timeline of both clocks with a wall clock jump](clock_diagram.svg)
+![Diagram visualising the timeline of both clocks with a wall clock jump](clock_diagram.png)
 
 Importantly, while it's obvious that the negative value is wrong, the positive one is arguably more dangerous: it looks plausible, but it is just as affected by the clock instability, so every measurement from that period might be skewed.
 
